@@ -40,8 +40,8 @@ public class DataManagementPage {
 		int rows_count = rows_table.size();
 		//System.out.println("Rows count:" + rows_count);
 
-		// *[@role='grid']/tbody/tr[1]/td[1]
-		//String resourceName = "Domestic Production MELB";
+		//[@role='grid']/tbody/tr[1]/td[1]
+		String resourceName1 = "Domestic Production MELB";
 		String beforeXpath = "//*[@role='grid']/tbody/tr[";
 		String afterXpath = "]/td[2]";
 		String checkboxAfterXpath = "]/td[1]";
@@ -51,7 +51,7 @@ public class DataManagementPage {
 			String actualcheckboxXpath = beforeXpath + i + checkboxAfterXpath;
 			WebElement elemVal = driver.findElement(By.xpath(actualXpath));
 			//System.out.println("Name of Resource: " + elemVal.getText() + " at position : " + i);
-			if (elemVal.getText().equalsIgnoreCase(resourceName)) {
+			if (elemVal.getText().equalsIgnoreCase(resourceName1)) {
 				driver.findElement(By.xpath(actualcheckboxXpath)).click();
 				System.out.println("Resource is found :" + elemVal.getText() + " at position : " + i);
 			}
